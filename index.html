@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="validator.js"></script>
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<form id="myform">
+		<div class="line">
+		<div class="col xs2 s2 m3 form-wrap">
+			<div class="input">
+				<label>First Name<span class="red-star">*</span>
+					<input type="text" id="firstName" data-validation="notEmpty quotes" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			<div class="input">
+				<label>Last Name<span class="red-star">*</span>
+					<input type="text" id="lastName" data-validation="notEmpty quotes" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			<div class="input">
+				<label>Birthday<span class="red-star">*</span>
+					<input type="date" placeholder="date" id="date" data-validation="notEmpty" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			<div class="input">
+				<label for="gender" data-validation="notEmpty">Gender<span class="red-star">*</span>
+					<p>male<input type="radio" name="gender" value="male" id="gender"></p>
+					<p>female<input type="radio" name="gender" value="female" id="gender"></p>
+				</label>
+			</div>
+			<div class="input">
+				<span>Country<span class="red-star">*</span></span>
+				<select name="country" data-validation="notEmpty" class="field">
+					<option selected disabled>Select your country</option>
+					<option value="Ukraine">Ukraine</option>
+					<option value="USA">USA</option>
+					<option value="France">France</option>
+					<option value="Italy">Italy</option>
+					<option value="China">China</option>
+				</select>
+			</div>
+			<div class="input">
+				<label for="email">Email<span class="red-star">*</span>
+					<input type="email" placeholder="example@mail.com" id="email" data-validation="notEmpty email" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			
+			<div class="input">
+				<label for="passw">Password<span class="red-star">*</span>
+				<input type="password" id="passw" data-validation="notEmpty password" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			<div class="input">
+				<label for="address">Address<span class="red-star">*</span>
+					<input type="text" id="address" data-validation="notEmpty quotes" class="field">
+				</label>
+				<div class="message"></div>
+			</div>
+			<div class="input">
+				<label>Notes
+					<textarea name="notes" id="notes" cols="20" rows="5"></textarea>
+				</label>
+				<div class="message"></div>
+			</div>
+			<button class="registration_btn">Registration</button>
+		</div>
+		</div>
+	</form>
+	<script>
+		var v = new Validator({
+		id: 'myform',
+		pattern: {
+			adress: /^$/
+		},
+		methods: {
+			'firstName' : [
+				['notEmpty'], 
+				['contains', 'lastName'], 
+				['pattern', 'quotes']
+			],
+			'lastName' : [
+				['notEmpty'], 
+				['contains', 'firstName'], 
+				['pattern', 'quotes']
+			],
+			'email' : [
+				['notEmpty'], 
+				['pattern', 'email']
+			],
+		}
+	});
+	</script>
+</body>
+</html>

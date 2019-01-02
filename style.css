@@ -1,0 +1,93 @@
+.line:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.col{
+	position: fixed;
+	left: 27%;
+	text-align: right;
+}
+.xs1{
+	width: 50%;
+}
+.xs2{
+	width: 100%;
+}
+@media screen and (max-width: 600px){
+	.s1{
+		width: 25%;
+	}
+	.s2{
+		width: 50%;
+	}
+	.s3{
+		width: 75%;
+	}
+	.s4{
+		width: 100%;
+	}
+}
+@media screen and (min-width: 600px){
+	.m1{
+		width: 10%;
+	}
+	.m2{
+		width: 20%;
+	}
+	.m3{
+		width: 30%;
+	}
+	.m4{
+		width: 40%;
+	}
+	.m5{
+		width: 50%;
+	}
+	.m6{
+		width: 60%;
+	}
+	.m7{
+		width: 70%;
+	}
+	.m8{
+		width: 80%;
+	}
+	.m9{
+		width: 90%;
+	}
+	.m10{
+		width: 100%;
+	}
+}
+div{
+	margin-bottom: 10px;
+}
+label,input,select,textarea{
+	width: 40%;
+}
+.registration_btn{
+	width: 40%;
+}
+
+.red-star{
+	color: red;
+}
+#gender{
+	width: 5%;
+}
+
+
+.input.error .field{
+	border: 1px solid red;
+}
+.input.error .message{
+	color: red;
+}
+.input.success .field{
+	border: 1px solid green;
+}
+.input.success .message{
+	color: green;
+}
+
